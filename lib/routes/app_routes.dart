@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 
 import '../pages/scan/ui/scan.dart';
-import '../pages/control/ui/control.dart';
+// import '../pages/control/ui/control.dart';
 
 const transitionMS = 500;
 
 abstract class AppRoutes {
   static const String scan = '/';
-  static const String control = '/control';
+  // static const String control = '/control';
 }
 
 class AppPages {
@@ -18,11 +18,11 @@ class AppPages {
       transition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(milliseconds: transitionMS),
     ),
-    GetPage(
-      name: AppRoutes.control,
-      page: () => const ControlPage(),
-      transition: Transition.leftToRightWithFade,
-      transitionDuration: const Duration(milliseconds: transitionMS),
-    ),
+    // GetPage(
+    //   name: AppRoutes.control,
+    //   page: () => const ControlPage(),
+    //   transition: Transition.leftToRightWithFade,
+    //   transitionDuration: const Duration(milliseconds: transitionMS),
+    // ),
   ];
 }
