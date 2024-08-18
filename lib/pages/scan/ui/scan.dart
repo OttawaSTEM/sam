@@ -81,7 +81,7 @@ class _ScanPageState extends State<ScanPage> {
     });
     MaterialPageRoute route = MaterialPageRoute(builder: (context) => DeviceScreen(device: device), settings: const RouteSettings(name: '/DeviceScreen'));
     Navigator.of(context).push(route);
-    Get.toNamed('/control/');
+    // Get.toNamed('/control/');
   }
 
   Future onRefresh() {
