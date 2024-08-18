@@ -10,3 +10,5 @@ Visor-Off - 4
 Brightness-HIGH - 5
 Brightness-LOW - 6
 DemoMode - 7
+
+# Build Release
