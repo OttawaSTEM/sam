@@ -70,7 +70,7 @@ class _CharacteristicTileState extends State<CharacteristicTile> {
 
   Future onSubscribePressed() async {
     try {
-      String op = c.isNotifying == false ? "Subscribe" : "Unubscribe";
+      String op = c.isNotifying == false ? "Subscribe" : "Unsubscribe";
       await c.setNotifyValue(c.isNotifying == false);
       Snackbar.show(ABC.c, "$op : Success", success: true);
       if (c.properties.read) {
@@ -86,17 +86,20 @@ class _CharacteristicTileState extends State<CharacteristicTile> {
 
   Widget buildUuid(BuildContext context) {
     String uuid = '0x${widget.characteristic.uuid.str.toUpperCase()}';
-    return Text(uuid, style: TextStyle(fontSize: 13));
+    return Text(uuid, style: const TextStyle(fontSize: 13));
   }
 
   Widget buildValue(BuildContext context) {
     String data = _value.toString();
-    return Text(data, style: TextStyle(fontSize: 13, color: Colors.grey));
+    return Text(
+      data,
+      style: const TextStyle(fontSize: 13, color: Colors.grey),
+    );
   }
 
   Widget buildReadButton(BuildContext context) {
     return TextButton(
-        child: Text("Read"),
+        child: const Text("Read"),
         onPressed: () async {
           await onReadPressed();
           if (mounted) {

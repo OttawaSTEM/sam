@@ -1,39 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'dart:async';
-import 'dart:developer';
-
-import 'package:logging/logging.dart';
-
-void main() {
-  runZonedGuarded(onStartUp, onCrashed);
-}
-
-void onStartUp() async {
-  Logger.root.onRecord.listen(onLogRecord);
-  hierarchicalLoggingEnabled = true;
-  runApp(const HomePage());
-}
-
-void onCrashed(Object error, StackTrace stackTrace) {
-  Logger.root.shout('App Crashed.', error, stackTrace);
-}
-
-void onLogRecord(LogRecord record) {
-  log(
-    record.message,
-    time: record.time,
-    sequenceNumber: record.sequenceNumber,
-    level: record.level.value,
-    name: record.loggerName,
-    zone: record.zone,
-    error: record.error,
-    stackTrace: record.stackTrace,
-  );
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class ControlPage extends StatelessWidget {
+  const ControlPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
-import '../widgets/service_tile.dart';
-import '../widgets/characteristic_tile.dart';
-import '../widgets/descriptor_tile.dart';
-import '../utils/snackbar.dart';
-import '../utils/extra.dart';
+import '../../widgets/service_tile.dart';
+import '../../widgets/characteristic_tile.dart';
+import '../../widgets/descriptor_tile.dart';
+import '../../utils/snackbar.dart';
+import '../../utils/extra.dart';
 
 class DeviceScreen extends StatefulWidget {
   final BluetoothDevice device;
@@ -162,8 +162,8 @@ class _DeviceScreenState extends State<DeviceScreen> {
   }
 
   Widget buildSpinner(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(14.0),
+    return const Padding(
+      padding: EdgeInsets.all(14.0),
       child: AspectRatio(
         aspectRatio: 1.0,
         child: CircularProgressIndicator(
@@ -184,10 +184,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
   Widget buildRssiTile(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        isConnected ? const Icon(Icons.bluetooth_connected) : const Icon(Icons.bluetooth_disabled),
-        Text(((isConnected && _rssi != null) ? '${_rssi!} dBm' : ''), style: Theme.of(context).textTheme.bodySmall)
-      ],
+      children: [isConnected ? const Icon(Icons.bluetooth_connected) : const Icon(Icons.bluetooth_disabled), Text(((isConnected && _rssi != null) ? '${_rssi!} dBm' : ''), style: Theme.of(context).textTheme.bodySmall)],
     );
   }
 
@@ -196,16 +193,16 @@ class _DeviceScreenState extends State<DeviceScreen> {
       index: (_isDiscoveringServices) ? 1 : 0,
       children: <Widget>[
         TextButton(
-          child: const Text("Get Services"),
           onPressed: onDiscoverServicesPressed,
+          child: const Text("Get Services"),
         ),
         const IconButton(
           icon: SizedBox(
+            width: 18.0,
+            height: 18.0,
             child: CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation(Colors.grey),
             ),
-            width: 18.0,
-            height: 18.0,
           ),
           onPressed: null,
         )

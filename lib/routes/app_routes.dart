@@ -1,21 +1,28 @@
-// import 'package:get/get.dart';
+import 'package:get/get.dart';
 
-// import '../pages/home/ui/home.dart';
+import '../pages/scan/ui/scan.dart';
+import '../pages/control/ui/control.dart';
 
-// const transitionMS = 500;
+const transitionMS = 500;
 
-// abstract class AppRoutes {
-//   static const String home = '/';
-//   static const String dashboard = '/dashboard';
-// }
+abstract class AppRoutes {
+  static const String scan = '/';
+  static const String control = '/control';
+}
 
-// class AppPages {
-//   static List<GetPage> pages = [
-//     GetPage(
-//       name: AppRoutes.home,
-//       page: () => const HomePage(),
-//       transition: Transition.leftToRightWithFade,
-//       transitionDuration: const Duration(milliseconds: transitionMS),
-//     ),
-//   ];
-// }
+class AppPages {
+  static List<GetPage> pages = [
+    GetPage(
+      name: AppRoutes.scan,
+      page: () => const ScanPage(),
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: const Duration(milliseconds: transitionMS),
+    ),
+    GetPage(
+      name: AppRoutes.control,
+      page: () => const ControlPage(),
+      transition: Transition.leftToRightWithFade,
+      transitionDuration: const Duration(milliseconds: transitionMS),
+    ),
+  ];
+}
