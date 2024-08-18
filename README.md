@@ -12,3 +12,4 @@ Brightness-LOW - 6
 DemoMode - 7
 
 # Build Release
+flutter build apk --release
