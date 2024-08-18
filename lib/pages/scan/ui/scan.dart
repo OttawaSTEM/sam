@@ -79,9 +79,9 @@ class _ScanPageState extends State<ScanPage> {
     device.connectAndUpdateStream().catchError((e) {
       Snackbar.show(ABC.c, prettyException("Connect Error:", e), success: false);
     });
-    MaterialPageRoute route = MaterialPageRoute(builder: (context) => DeviceScreen(device: device), settings: RouteSettings(name: '/DeviceScreen'));
+    MaterialPageRoute route = MaterialPageRoute(builder: (context) => DeviceScreen(device: device), settings: const RouteSettings(name: '/DeviceScreen'));
     Navigator.of(context).push(route);
-    // Get.toNamed('/control/');
+    Get.toNamed('/control/');
   }
 
   Future onRefresh() {
